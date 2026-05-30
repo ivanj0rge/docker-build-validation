@@ -1,0 +1,7 @@
+services:
+  web:
+    image: nginx
+
+  tester:
+    image: ubuntu
+    command: sleep infinity
