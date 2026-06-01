@@ -13,5 +13,21 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Make Validation Script Executable
+        run: chmod +x validate
+
+      - name: Run Validation
+        run: ./validate.sh
+
       - name: Build Docker Image
         run: docker build -t portfolio-site .
+
+      - name: Create Build Report
+        run: |
+          echo "Docker build completed successfully" > build-report.txt
+
+      - name: Upload Build Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-report
+          path: build-report.txt
