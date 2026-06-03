@@ -1,5 +1,8 @@
 name: Docker Build Validation
 
+env:
+  IMAGE_NAME: portfolio-site
+
 on:
   push:
 
@@ -20,7 +23,7 @@ jobs:
         run: ./validate.sh
 
       - name: Build Docker Image
-        run: docker build -t portfolio-site .
+        run: docker build -t $IMAGE_NAME .
 
       - name: Create Build Report
         run: |
