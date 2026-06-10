@@ -16,6 +16,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Show Project Owner
+        run: echo "Project Owner: ${{ secrets.PROJECT_OWNER }}"
+
       - name: Make Validation Script Executable
         run: chmod +x validate.sh
 
