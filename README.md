@@ -4,7 +4,7 @@
 
 This project demonstrates a simple CI pipeline using GitHub Actions for a Dockerized website. The pipeline validates project files, builds a Docker image, and uploads a build artifact upon successful completion.
 
-The purpose of this project is to practice core DevOps concepts including automation, validation, reproducibility, containerization, and Continuous Integration (CI).
+This project was built as part of my DevOps learning journey to practice CI/CD fundamentals using Docker and GitHub Actions.
 
 ---
 
@@ -13,10 +13,12 @@ The purpose of this project is to practice core DevOps concepts including automa
 * Git
 * GitHub
 * GitHub Actions
+* GitHub Secrets
 * Docker
 * Dockerfile
 * Bash
 * Nginx
+* Linux
 
 ---
 
@@ -77,6 +79,8 @@ This project was created to practice:
 * Docker image creation
 * Containerized application deployment
 * GitHub Actions workflows
+* Environment variables
+* GitHub secrets
 * Continuous Integration (CI)
 * Validation and fail-fast principles
 * Artifact generation and preservation
@@ -87,13 +91,15 @@ This project was created to practice:
 ## Architecture
 
 ```text
+Developer Push
+↓
 GitHub Repository
 ↓
 GitHub Actions Runner
 ↓
 Validation Script
 ↓
-Docker Build
+Docker Image  Build
 ↓
 Build Report
 ↓
@@ -135,11 +141,26 @@ http://localhost:8080
 
 * Add automated deployment stage
 * Add Docker Compose support
-* Add environment variables
 * Add automated testing
 * Add Azure deployment
 * Add container image publishing to Docker Hub
 * Add application health checks
+
+---
+
+## Future CI/CD Pipeline
+
+GitHub Push
+↓
+GitHub Actions
+↓
+Validation
+↓
+Docker Build
+↓
+Docker Registry
+↓
+Deployment
 
 ---
 
@@ -154,6 +175,40 @@ http://localhost:8080
 * Reproducibility
 * Infrastructure as Code
 * GitHub Actions Workflows
+
+---
+## Lessons Learned
+
+During this project I learned:
+
+- How GitHub Actions runners work
+- The purpose of repository checkout
+- How Docker images and containers differ
+- How to validate files before building
+- How to generate and upload workflow artifacts
+- How environment variables reduce duplication
+- How GitHub Secrets securely store sensitive configuration
+- The role of Docker registries in CI/CD pipelines
+
+---
+
+## Current Status
+
+✅ Validation Script
+
+✅ Docker Image Build
+
+✅ GitHub Actions CI
+
+✅ Artifact Upload
+
+✅ Environment Variables
+
+✅ GitHub Secrets
+
+🚧 Docker Registry Integration (Planned)
+
+🚧 Automated Deployment (Planned)
 
 ```
 ```
